@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pagination</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div id="cards-container">
+        <p id="empty-state-message">No results found.</p>
+      </div>
+      <div id="pagination" class="pagination">
+        <button id="prev-button">Previous</button>
+        <div id="page-numbers" class="page-indicator-container"></div>
+        <button id="next-button">Next</button>
+      </div>
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Type 2 to see how it works" />
+    </div>
+  </body>
+  <script src="cards.js"></script>
+  <script src="app.js"></script>
+</html>
