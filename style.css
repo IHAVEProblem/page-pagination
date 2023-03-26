@@ -10,13 +10,29 @@ body {
   background: #fffbf5;
   color: #393e46;
 }
+
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  min-height: 234px;
+  border: 2px solid #674188;
+  text-align: center;
+}
+
+.empty-state {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .card {
+  height: 100px;
   background: #f7efe5;
   border: 1px solid #674188;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px;
-  margin-bottom: 10px;
   animation: fade-in 1s;
 }
 
