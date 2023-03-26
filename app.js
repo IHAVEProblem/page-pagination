@@ -104,20 +104,23 @@ function renderCards(cardsToRender, page) {
 
     pageNumberContainerEl.appendChild(pageCircleEl)
   }
-
-  const cardElements = cardsToRender
-    .slice(startIndex, endIndex)
-    .map((card) => {
-      return `
+  if (cardsToRender.length === 0) {
+    cardsContainerEl.innerHTML = '<p class="empty-state">No cards found.</p>'
+  } else {
+    const cardElements = cardsToRender
+      .slice(startIndex, endIndex)
+      .map((card) => {
+        return `
       <div class="card">
         <h2>${card.title}</h2>
         <p>${card.description}</p>
       </div>
     `
-    })
-    .join('')
+      })
+      .join('')
 
-  cardsContainerEl.innerHTML = cardElements
+    cardsContainerEl.innerHTML = cardElements
+  }
 }
 
 function handleSearchInput(event) {
