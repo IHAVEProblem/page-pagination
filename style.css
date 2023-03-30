@@ -6,19 +6,28 @@
 body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background: #fffbf5;
   color: #393e46;
 }
 
-.cards-container {
+.main-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px;
+}
+
+.cards-container {
+  --card-height: 100px;
+  max-width: 1180px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
   padding: 10px;
   min-height: 234px;
-  border: 2px solid #674188;
   text-align: center;
 }
 
@@ -29,15 +38,29 @@ body {
 
 .card {
   height: 100px;
+  max-width: 400px;
   background: #f7efe5;
   border: 1px solid #674188;
   border-radius: 5px;
   padding: 10px;
   animation: fade-in 1s;
+  overflow: hidden;
+  display: flex;
+}
+
+.card-img {
+  flex: 0 30%;
+
+  object-fit: cover;
 }
 
 .card h2 {
+  flex: 1;
   color: #674188;
+}
+
+.card p {
+  flex: 1;
 }
 
 @keyframes fade-in {
@@ -47,17 +70,6 @@ body {
   to {
     opacity: 1;
   }
-}
-#pagination {
-  margin-top: 10px;
-}
-
-#pagination button {
-  margin-right: 10px;
-}
-
-#page-numbers {
-  margin: 0 10px;
 }
 
 button {
@@ -76,35 +88,44 @@ button:hover {
 }
 .hidden {
   /* display: none; */
+  pointer-events: none;
   opacity: 0;
 }
 
 .pagination {
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 .page-indicator-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 224px;
+  margin: 0 5px;
 }
 
 .page-circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   margin: 0 5px;
   border-radius: 50%;
   background-color: #ccc;
-  color: #fff;
+  color: #535353;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
+.page-circle:hover {
+  background-color: #999;
+}
+
 .page-circle.active {
   background-color: #555;
+  color: #fff;
 }
 
 .page-indicator-container span:first-child:not(.page-circle) {
@@ -118,7 +139,6 @@ button:hover {
 input {
   width: 50%;
   padding: 10px;
-  margin: 10px;
   background: #f7efe5;
   border: 1px solid #674188;
   border-radius: 5px;
@@ -128,10 +148,4 @@ input {
 input:hover {
   background: #f0e6da;
   color: #674188;
-}
-
-.main-container {
-  overflow: hidden;
-  width: 100%;
-  padding: 20px;
 }
