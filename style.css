@@ -48,10 +48,23 @@ body {
   display: flex;
 }
 
-.card-img {
-  flex: 0 30%;
+.animate {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
 
+.card-img {
+  animation: skeleton-loading 1s linear infinite alternate;
   object-fit: cover;
+  width: 124px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }
 
 .card h2 {

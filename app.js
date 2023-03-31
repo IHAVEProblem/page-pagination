@@ -171,7 +171,7 @@ function renderCards(cardsToRender, page) {
         return `
       <div class="card">
          <img src="${card.img}" class="card-img" alt="${card.img}">
-        <h2>${card.title}</h2>
+        <h2 >${card.title}</h2>
         <p>${card.description}</p>
       </div>
     `
